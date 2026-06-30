@@ -1,0 +1,261 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Base ────────────────────────────────────────────────── */
+
+.stApp {
+    background-color: #0f172a;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+
+section[data-testid="stSidebar"] {
+    background-color: #0d1526;
+    border-right: 1px solid #1e293b;
+}
+
+section[data-testid="stSidebar"] .stSelectbox label,
+section[data-testid="stSidebar"] .stMultiSelect label {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2 {
+    color: #e2e8f0 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+}
+
+/* ── Encabezado principal ────────────────────────────────── */
+
+.dash-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 28px 0 6px 0;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 28px;
+}
+
+.dash-header-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.dash-header-text {
+    flex: 1;
+}
+
+.dash-header-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.dash-header-sub {
+    font-size: 12px;
+    color: #475569;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 2px 0 0 0;
+    letter-spacing: 0.03em;
+}
+
+.dash-badge {
+    background: #0ea5e920;
+    border: 1px solid #0ea5e940;
+    color: #0ea5e9;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Separadores de sección ──────────────────────────────── */
+
+.section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #334155;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 28px 0 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #1e293b;
+}
+
+/* ── Tarjetas KPI ────────────────────────────────────────── */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 6px;
+}
+
+.kpi-card {
+    background: #131f35;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px 20px 16px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.8;
+}
+
+.kpi-card::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.04;
+}
+
+.kpi-icon {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.kpi-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #475569;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.kpi-value.small {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #cbd5e1;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.kpi-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.kpi-delta.up {
+    background: #10b98115;
+    color: #10b981;
+}
+
+.kpi-delta.neutral {
+    background: #0ea5e915;
+    color: #0ea5e9;
+}
+
+/* ── Gráficos ────────────────────────────────────────────── */
+
+[data-testid="stPlotlyChart"] {
+    background: #131f35 !important;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 4px;
+    margin-top: 0;
+}
+
+/* ── Tabla ───────────────────────────────────────────────── */
+
+[data-testid="stDataFrame"] {
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] table {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.table-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.table-badge {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #475569;
+    background: #1e293b;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
+
+
+
+[data-testid="stMultiSelect"] span[data-baseweb="tag"] {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+
+
